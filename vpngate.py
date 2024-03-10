@@ -71,7 +71,7 @@ f.write(
 f.close()
 
 print("Config File Copy : " + path)
-subprocess.Popen(["copy", path, ".github/workflows/client.ovpn"])
+subprocess.Popen(["cp", path, ".github/workflows/client.ovpn"])
 
 # x = subprocess.Popen(["sudo", "openvpn", "--config", path
 #                       , "--daemon", "--log", "openvpn.log", "--writepid", "openvpn.pid"])
