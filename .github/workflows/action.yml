@@ -22,6 +22,8 @@ jobs:
         pip install -r requirements.txt
     - name: Check IP before VPN
       run: curl https://api.myip.com/
+    - name: Copy config file
+      run: python vpngate.py korea
     - name: Connect to VPN
       uses: "kota65535/github-openvpn-connect-action@v2"
       with:
