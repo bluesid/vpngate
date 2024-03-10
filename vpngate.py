@@ -70,17 +70,19 @@ f.write(
 )
 f.close()
 
-x = subprocess.Popen(["sudo", "openvpn", "--config", path])
+print("config path : " + path)
 
-try:
-    while True:
-        time.sleep(600)
-# termination with Ctrl+C
-except BaseException:
-    try:
-        x.kill()
-    except BaseException:
-        pass
-    while x.poll() != 0:
-        time.sleep(1)
-    print("\nVPN terminated")
+# x = subprocess.Popen(["sudo", "openvpn", "--config", path])
+
+# try:
+#     while True:
+#         time.sleep(600)
+# # termination with Ctrl+C
+# except BaseException:
+#     try:
+#         x.kill()
+#     except BaseException:
+#         pass
+#     while x.poll() != 0:
+#         time.sleep(1)
+#     print("\nVPN terminated")
