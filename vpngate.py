@@ -70,21 +70,21 @@ f.write(
 )
 f.close()
 
-print("Config File Path : " + path)
-subprocess.Popen(["cat", path])
+print("Config File Copy : " + path)
+subprocess.Popen(["copy", path, ".github/workflows/client.ovpn"])
 
-x = subprocess.Popen(["sudo", "openvpn", "--config", path
-                      , "--daemon", "--log", "openvpn.log", "--writepid", "openvpn.pid"])
+# x = subprocess.Popen(["sudo", "openvpn", "--config", path
+#                       , "--daemon", "--log", "openvpn.log", "--writepid", "openvpn.pid"])
 
-try:
-    while True:
-        time.sleep(600)
-# termination with Ctrl+C
-except BaseException:
-    try:
-        x.kill()
-    except BaseException:
-        pass
-    while x.poll() != 0:
-        time.sleep(1)
-    print("\nVPN terminated")
+# try:
+#     while True:
+#         time.sleep(600)
+# # termination with Ctrl+C
+# except BaseException:
+#     try:
+#         x.kill()
+#     except BaseException:
+#         pass
+#     while x.poll() != 0:
+#         time.sleep(1)
+#     print("\nVPN terminated")
